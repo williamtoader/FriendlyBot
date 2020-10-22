@@ -1,4 +1,5 @@
 FROM openjdk
+WORKDIR ./
 RUN ./gradlew jar
 COPY ./build/libs/friendlyBot-1.0-SNAPSHOT.jar /usr/bin/bot.jar
 COPY ./token.txt /usr/bin/token.txt

@@ -1,8 +1,6 @@
 FROM openjdk
-COPY ./ /usr/src/bot/
-WORKDIR /usr/src/bot/
-RUN "./gradlew jar"
-RUN copy build/libs/friendlyBot-1.0-SNAPSHOT.jar /usr/bin/bot.jar
-COPY ./token.txt /usr/bin/token.txt
-WORKDIR /usr/bin
+COPY ./build/libs/friendlyBot-1.0-SNAPSHOT.jar /usr/bin/bot/bot.jar
+WORKDIR /usr/bin/bot/
+COPY ./token.txt /usr/bin/bot/token.txt
+WORKDIR /usr/bin/bot
 CMD ["java", "-jar", "bot.jar"]

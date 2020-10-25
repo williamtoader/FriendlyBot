@@ -22,7 +22,7 @@ public class Main {
     public static void main(String[] args) {
         String token = "";
         try {
-            token = readFile("token.txt", StandardCharsets.US_ASCII);
+            token = readFile("token.txt", StandardCharsets.US_ASCII).trim();
         }
         catch (IOException e) {
             return;

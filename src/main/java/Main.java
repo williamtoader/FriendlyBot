@@ -9,6 +9,8 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Main {
 
@@ -30,6 +32,10 @@ public class Main {
 
         final DiscordClient client = DiscordClient.create(token);
         final GatewayDiscordClient gateway = client.login().block();
+
+        TimerTask loop = new LoopTask(gateway);
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(loop,0, 30000);
 
         gateway.on(MessageCreateEvent.class).subscribe(event -> {
             final Message message = event.getMessage();

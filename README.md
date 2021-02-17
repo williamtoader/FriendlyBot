@@ -1,7 +1,4 @@
-#FriendlyBot
-Discord Bot, doesn't do much!
-👌 You looked!
-
-##Made in Java
-
+# FriendlyBot  
+### Discord Bot, doesn't do much!  
+  
 Run `sudo sh build-image.sh` to build the `friendlybot:latest` docker image
